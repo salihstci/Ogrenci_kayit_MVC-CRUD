@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Ogr_Kayit_MVC.Models.Table>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Öğrenci Bilgileri</h2>
+
+<p>
+    @Html.ActionLink("Yeni Öğrenci Kaydı Oluştur", "Create") 
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OgrAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OgrSoyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OgrMail)
+        </th>
+     
+        <th>
+            @Html.DisplayNameFor(model => model.OgrAdres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OgrYas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OgrSınıf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OgrNot)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OgrHarfNotu)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OgrAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OgrSoyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OgrMail)
+        </td>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.OgrAdres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OgrYas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OgrSınıf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OgrNot)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OgrHarfNotu)
+        </td>
+        <td>
+            @Html.ActionLink("Öğrenci Düzenle", "Edit", new { id=item.Id }, new { @class="btn btn-success"}  ) |
+            @Html.ActionLink("Öğrenci Detayları", "Details", new { id=item.Id }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Öğrenci Sil", "Delete", new { id=item.Id }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

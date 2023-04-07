@@ -1,0 +1,97 @@
+﻿@model Ogr_Kayit_MVC.Models.Table
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3>Öğrenciyi sil</h3>
+
+<h4>Öğrencinin Bilgilerini Silmek İstediğine Emin Misin?</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrAd)
+            
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrSoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrSoyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrMail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrMail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrFotograf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrFotograf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrAdres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrAdres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrYas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrYas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrSınıf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrSınıf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrNot)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrNot)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrHarfNotu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrHarfNotu)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        <hr />
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-danger" />
+            <hr />
+            @Html.ActionLink("Öğrenci Listesine Geri Dön", "Index")
+        </div>
+    }
+</div>
